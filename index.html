@@ -8,13 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/slick.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/main.css?v=0.1" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
     <div class="container">
-        <div class="logo"><a href="/"><img src="img/logo.svg" alt=""></a></div>
+        <div class="logo-wrapper">
+            <div class="logo-wrapper__menu">
+                <a href="#" data-trigger="header_menu"><img src="img/menu-icon.svg" alt=""></a>
+            </div>
+            <div class="logo"><a href="/"><img src="img/logo.svg" alt=""></a></div>
+            <div class="logo-wrapper__info">
+                <a href="#" data-trigger="header_info"><img src="img/info-icon.svg" alt=""></a>
+            </div>
+        </div>
         <div class="menu">
             <ul class="menu__list">
                 <li><a href="#">Кризисные центры</a></li>
@@ -678,7 +686,7 @@
             <div class="content__col">
                 <div class="content__col-info">
                     <h2 class="content__col-title">
-                        Каждая 6-ая
+                        Каждая <span class="nowrap">6-ая</span>
                     </h2>
                     <p class="content__col-text">
                         17 % женщин в возрасте 18-75 лет, когда-либо
@@ -1000,6 +1008,7 @@
                                     <span>+7 701 109-00-09</span>
                                 </div>
                             </div>
+                            <div class="tabs__item-block"></div>
                         </div>
                     </div>
                     <div class="tabs__item" id="tabShymkent">
