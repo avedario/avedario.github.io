@@ -138,7 +138,33 @@
 </header>
 
 <main role="main">
-
+  <style>
+    header,
+    footer{
+      display: none;
+    }
+    body {
+      padding: 0;
+    }
+  </style>
+  <div class="site-error">
+    <div class="flex">
+      <img src="./images/error-page.svg" alt="">
+      <h2>Страница не найдена</h2>
+      <p>Возможно, вы найдете что-то здесь:</p>
+      <div class="links">
+        <div class="links__item">
+          <a href="/">Главная страница</a>
+        </div>
+        <div class="links__item">
+          <a href="<?= Url::to(['catalog/index']) ?>">Каталог</a>
+        </div>
+        <div class="links__item">
+          <a href="<?= Url::to(['site/delivery']) ?>">Доставка и оплата</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer class="footer">
