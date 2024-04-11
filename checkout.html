@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+<head>
+  <meta charset="<?= Yii::$app->charset ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dimarket</title>
+  <link type="image/png" sizes="16x16" rel="icon" href="./fav16.png">
+  <link type="image/png" sizes="32x32" rel="icon" href="./fav64.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="./css/slick.css" rel="stylesheet">
+  <link href="./css/lightbox.min.css" rel="stylesheet">
+  <link href="./css/main.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="overlay" data-action="overlayClose"></div>
+
+<div class="modal success">
+  <div class="modal-content">
+    <div class="modal-close" data-action="closeModal">
+      <img src="../images/modal-close-btn.svg" alt="">
+    </div>
+    <div class="modal-text">
+      <div class="flex"><img src="../images/modal-success.svg" alt=""></div>
+      <h4>Ваш заказ в обработке</h4>
+      <p>Мы приняли ваш заказ и свяжемся с вами в течение рабочего дня.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal failed">
+  <div class="modal-content">
+    <div class="modal-close" data-action="closeModal">
+      <img src="../images/modal-close-btn.svg" alt="">
+    </div>
+    <div class="modal-text">
+      <div class="flex"><img src="../images/modal-failed.svg" alt=""></div>
+      <h4>Заявка не отправлена</h4>
+      <p>
+        Возникли проблемы на сервере.<br>
+        Попробуйте повторить отправку позже.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-menu">
+  <div class="container">
+    <ul class="menu__list">
+      <li>
+        <a href="<?= Url::to(['catalog/index']) ?>">Каталог</a>
+      </li>
+      <li class="submenu">
+        <a href="#" data-toggle="slideNext">Категории<span class="submenu__arrow"></span></a>
+        <ul class="submenu__list">
+          <li class="submenu__item">
+            <a href="<?= Url::to(['category/clitoral-stimulators']) ?>">Стимуляторы клитора</a>
+          </li>
+          <li class="submenu__item">
+            <a href="<?= Url::to(['category/bdsm']) ?>">BDSM</a>
+          </li>
+          <li class="submenu__item">
+            <a href="<?= Url::to(['category/misc']) ?>">Другое</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="<?= Url::to(['site/delivery']) ?>">Доставка и оплата</a>
+      </li>
+    </ul>
+
+    <div class="contacts">
+      <div class="contacts__item">
+        Тлендиева, 223, Алматы, Казахстан
+      </div>
+      <div class="contacts__item">
+        +7 706 430-93-10
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="./">
+        <img src="../images/main-logo.svg" alt="">
+      </a>
+    </div>
+
+    <div class="menu">
+      <ul class="menu__list">
+        <li>
+          <a href="<?= Url::to(['catalog/index']) ?>">Каталог</a>
+        </li>
+        <li class="submenu">
+          <a href="#" onclick="return false">Категории<span class="submenu__arrow"></span></a>
+          <ul class="submenu__list">
+            <li class="submenu__item">
+              <a href="<?= Url::to(['category/clitoral-stimulators']) ?>">Стимуляторы<br>клитора</a>
+            </li>
+            <li class="submenu__item">
+              <a href="<?= Url::to(['category/bdsm']) ?>">BDSM</a>
+            </li>
+            <li class="submenu__item">
+              <a href="<?= Url::to(['category/misc']) ?>">Другое</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="<?= Url::to(['site/delivery']) ?>">Доставка и оплата</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--        <div class="mobile-menu__icon">-->
+    <!--            <a href="#" data-action="menuShow" class="menu-toggle"></a>-->
+    <!--        </div>-->
+
+    <div class="contacts">
+      <div class="contacts__item">
+        <a href="#" class="icon phone" data-action="headerContactsToggle"></a>
+        <div class="contacts__item-text">
+          +7 706 430-93-10
+        </div>
+      </div>
+      <div class="contacts__item">
+        <a href="./cart" class="icon cart"></a>
+      </div>
+      <div class="contacts__item mobile-menu__icon">
+        <a href="#" data-action="menuShow" class="menu-toggle"></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main role="main">
+  <div id="checkout">
+    <div class="container">
+      <section class="main">
+        <div class="back mobile">
+          <a href="/cart">
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.96938 6.46939L6.46938 1.96939C6.61027 1.82849 6.80137 1.74934 7.00063 1.74934C7.19988 1.74934 7.39098 1.82849 7.53188 1.96939C7.67277 2.11028 7.75193 2.30138 7.75193 2.50064C7.75193 2.6999 7.67277 2.89099 7.53188 3.03189L4.3125 6.25001L13.5 6.25001C13.6989 6.25001 13.8897 6.32903 14.0303 6.46968C14.171 6.61034 14.25 6.8011 14.25 7.00001C14.25 7.19893 14.171 7.38969 14.0303 7.53034C13.8897 7.671 13.6989 7.75001 13.5 7.75001L4.3125 7.75001L7.53063 10.97C7.67152 11.1109 7.75068 11.302 7.75068 11.5013C7.75068 11.7005 7.67152 11.8916 7.53063 12.0325C7.38973 12.1734 7.19863 12.2526 6.99938 12.2526C6.80012 12.2526 6.60902 12.1734 6.46813 12.0325L1.96813 7.53251C1.89819 7.46274 1.84273 7.37984 1.80493 7.28858C1.76713 7.19731 1.74773 7.09948 1.74785 7.00069C1.74796 6.90191 1.76759 6.80412 1.80561 6.71294C1.84363 6.62176 1.89928 6.53899 1.96938 6.46939Z" fill="#222222"/>
+                        </svg>
+                    </span> Назад к корзине</a>
+        </div>
+        <h1>
+          Оформление заказа
+        </h1>
+        <div class="back desktop">
+          <a href="/cart">
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.96938 6.46939L6.46938 1.96939C6.61027 1.82849 6.80137 1.74934 7.00063 1.74934C7.19988 1.74934 7.39098 1.82849 7.53188 1.96939C7.67277 2.11028 7.75193 2.30138 7.75193 2.50064C7.75193 2.6999 7.67277 2.89099 7.53188 3.03189L4.3125 6.25001L13.5 6.25001C13.6989 6.25001 13.8897 6.32903 14.0303 6.46968C14.171 6.61034 14.25 6.8011 14.25 7.00001C14.25 7.19893 14.171 7.38969 14.0303 7.53034C13.8897 7.671 13.6989 7.75001 13.5 7.75001L4.3125 7.75001L7.53063 10.97C7.67152 11.1109 7.75068 11.302 7.75068 11.5013C7.75068 11.7005 7.67152 11.8916 7.53063 12.0325C7.38973 12.1734 7.19863 12.2526 6.99938 12.2526C6.80012 12.2526 6.60902 12.1734 6.46813 12.0325L1.96813 7.53251C1.89819 7.46274 1.84273 7.37984 1.80493 7.28858C1.76713 7.19731 1.74773 7.09948 1.74785 7.00069C1.74796 6.90191 1.76759 6.80412 1.80561 6.71294C1.84363 6.62176 1.89928 6.53899 1.96938 6.46939Z" fill="#222222"/>
+                        </svg>
+                    </span> Назад к корзине</a>
+        </div>
+      </section>
+
+      <section class="items-wrapper">
+        <div class="flex">
+          <div class="item order-info">
+            <form action="" id="checkoutForm" method="POST">
+              <input type="hidden" name="<?= Yii::$app->request->csrfParam ?>" value="<?= Yii::$app->request->getCsrfToken() ?>" />
+              <div class="order-details">
+                <h3>Доставка и оплата</h3>
+                <div class="input-wrapper">
+                  <label for="paymentMethod">Способ оплаты</label>
+                  <select class="select" name="payment" id="paymentMethod">
+                    <option value="Система платежей Kaspi" selected>Система платежей Kaspi</option>
+                    <option value="Система платежей Kaspi">Система платежей Kaspi</option>
+                    <option value="Банковская карта">Банковская карта</option>
+                    <option value="По реквизитам">По реквизитам</option>
+                    <option value="Наличными">Наличными</option>
+                  </select>
+                </div>
+                <div class="input-wrapper">
+                  <label for="deliveryMethod">Способ доставки</label>
+                  <select class="select" name="delivery" id="deliveryMethod">
+                    <option value="Курьером" selected>Курьером</option>
+                    <option value="Курьером">Курьером</option>
+                    <option value="Самовывоз">Самовывоз</option>
+                    <option value="Самовывоз">Транспортная компания</option>
+                  </select>
+                </div>
+                <h3>Контактная информация</h3>
+                <div class="input-wrapper">
+                  <label for="name">Ваше имя</label>
+                  <input type="text" id="name" name="name" class="required" placeholder="Введите имя">
+                  <div class="error-message not-empty">Это поле обязательно для заполнения</div>
+                </div>
+                <div class="input-wrapper">
+                  <label for="phone">Телефон</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+7 ___ ___-__-__" class="phone-mask">
+                </div>
+                <div class="input-wrapper">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" class="required" placeholder="example@gmail.com">
+                  <div class="error-message not-empty">Это поле обязательно для заполнения</div>
+                  <div class="error-message wrong-format">Неверный формат</div>
+                </div>
+                <div class="input-wrapper">
+                  <label for="comment">Комментарий</label>
+                  <textarea name="comment" id="comment" placeholder="Если у вас есть уточнения и пожелания, опишите их. Мы учтем ваш комментарий."></textarea>
+                </div>
+              </div>
+              <div class="order-confirm">
+                <div class="flex">
+                  <div class="text">К оплате</div>
+                  <div class="price">15 000 ₸</div>
+                </div>
+                <button type="submit" class="btn btn-white">Подтвердить заказ</button>
+                <p>Подтверждая заказ вы соглашаетесь с&nbsp;<a href="/privacy">политикой&nbsp;конфиденциальности</a></p>
+              </div>
+            </form>
+          </div>
+          <div class="item order-list">
+            <h2>Ваш заказ</h2>
+            <div class="goods-list">
+              <div class="good row">
+                <div class="image">
+                  <img src="./images/product-1.png" alt="">
+                </div>
+                <div class="text">
+                  <div class="title">Satisfyer Pro Penguin</div>
+                  <div class="flex">
+                    <span>Цена</span>
+                    <span>19 000 ₸</span>
+                  </div>
+                  <div class="flex">
+                    <span>Количество</span>
+                    <span>1 шт.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="good">
+                <div class="image">
+                  <img src="./images/product-2.png" alt="">
+                </div>
+                <div class="text">
+                  <div class="title">Satisfyer Mono Flex</div>
+                  <div class="flex">
+                    <span>Цена</span>
+                    <span>23 000 ₸</span>
+                  </div>
+                  <div class="flex">
+                    <span>Количество</span>
+                    <span>1 шт.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="text">
+      <div class="item copyright">
+        &copy; 2024 | Dimarket
+      </div>
+      <div class="item">
+        <div class="item-text">
+          Тлендиева, 223, Алматы, Казахстан
+        </div>
+        <div class="item-text">
+          +7 706 430-93-10
+        </div>
+      </div>
+      <div class="item social">
+        <div class="item-title">Мы всегда на связи</div>
+        <div class="icons">
+          <a href="#"><img src="../images/instagram-logo.svg" alt=""></a>
+          <a href="#"><img src="../images/whatsapp-logo.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="./js/jquery.js"></script>
+<script src="./js/slick.min.js"></script>
+<script src="./js/lightbox.min.js"></script>
+<script src="./js/jquery.maskedinput.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
