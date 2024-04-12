@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+<head>
+  <meta charset="<?= Yii::$app->charset ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dimarket</title>
+  <link type="image/png" sizes="16x16" rel="icon" href="./fav16.png">
+  <link type="image/png" sizes="32x32" rel="icon" href="./fav64.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="./css/slick.css" rel="stylesheet">
+  <link href="./css/lightbox.min.css" rel="stylesheet">
+  <link href="./css/main.css?v=1" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="overlay" data-action="overlayClose"></div>
+
+<div class="modal success">
+  <div class="modal-content">
+    <div class="modal-close" data-action="closeModal">
+      <img src="./images/modal-close-btn.svg" alt="">
+    </div>
+    <div class="modal-text">
+      <div class="flex"><img src="./images/modal-success.svg" alt=""></div>
+      <h4>Ваш заказ в обработке</h4>
+      <p>Мы приняли ваш заказ и свяжемся с вами в течение рабочего дня.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal failed">
+  <div class="modal-content">
+    <div class="modal-close" data-action="closeModal">
+      <img src="./images/modal-close-btn.svg" alt="">
+    </div>
+    <div class="modal-text">
+      <div class="flex"><img src="./images/modal-failed.svg" alt=""></div>
+      <h4>Заявка не отправлена</h4>
+      <p>
+        Возникли проблемы на сервере.<br>
+        Попробуйте повторить отправку позже.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-menu">
+  <div class="container">
+    <ul class="menu__list">
+      <li>
+        <a href="<?= Url::to(['catalog/index']) ?>">Каталог</a>
+      </li>
+      <li class="submenu">
+        <a href="#" data-toggle="slideNext">Категории<span class="submenu__arrow"></span></a>
+        <ul class="submenu__list">
+          <li class="submenu__item">
+            <a href="<?= Url::to(['category/clitoral-stimulators']) ?>">Стимуляторы клитора</a>
+          </li>
+          <li class="submenu__item">
+            <a href="<?= Url::to(['category/bdsm']) ?>">BDSM</a>
+          </li>
+          <li class="submenu__item">
+            <a href="<?= Url::to(['category/misc']) ?>">Другое</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="<?= Url::to(['site/delivery']) ?>">Доставка и оплата</a>
+      </li>
+    </ul>
+
+    <div class="contacts">
+      <div class="contacts__item">
+        Тлендиева, 223, Алматы, Казахстан
+      </div>
+      <div class="contacts__item">
+        +7 706 430-93-10
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <img src="./images/main-logo.svg" alt="">
+      </a>
+    </div>
+
+    <div class="menu">
+      <ul class="menu__list">
+        <li>
+          <a href="<?= Url::to(['catalog/index']) ?>">Каталог</a>
+        </li>
+        <li class="submenu">
+          <a href="#" onclick="return false">Категории<span class="submenu__arrow"></span></a>
+          <ul class="submenu__list">
+            <li class="submenu__item">
+              <a href="<?= Url::to(['category/clitoral-stimulators']) ?>">Стимуляторы<br>клитора</a>
+            </li>
+            <li class="submenu__item">
+              <a href="<?= Url::to(['category/bdsm']) ?>">BDSM</a>
+            </li>
+            <li class="submenu__item">
+              <a href="<?= Url::to(['category/misc']) ?>">Другое</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="<?= Url::to(['site/delivery']) ?>">Доставка и оплата</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--        <div class="mobile-menu__icon">-->
+    <!--            <a href="#" data-action="menuShow" class="menu-toggle"></a>-->
+    <!--        </div>-->
+
+    <div class="contacts">
+      <div class="contacts__item">
+        <a href="#" class="icon phone" data-action="headerContactsToggle"></a>
+        <div class="contacts__item-text">
+          +7 706 430-93-10
+        </div>
+      </div>
+      <div class="contacts__item">
+        <a href="./cart" class="icon cart"></a>
+      </div>
+      <div class="contacts__item mobile-menu__icon">
+        <a href="#" data-action="menuShow" class="menu-toggle"></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main role="main">
+  <div id="catalog">
+
+    <section class="main">
+      <h1>
+        Каталог товаров
+      </h1>
+    </section>
+
+    <section class="category-wrapper carousel carousel--wider">
+      <div class="item">
+        <a href="#" class="btn btn-white active">Вибраторы</a>
+      </div>
+      <div class="item">
+        <a href="#" class="btn btn-white">Стимуляторы клитора</a>
+      </div>
+      <div class="item">
+        <a href="#" class="btn btn-white">BDSM</a>
+      </div>
+      <div class="item">
+        <a href="#" class="btn btn-white">Другое</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="goods-wrapper">
+        <div class="item good">
+          <a href="#">
+            <div class="image">
+              <img src="./images/good1.png" alt="">
+            </div>
+            <div class="subtitle">
+              Стимулятор клитора
+            </div>
+            <div class="title">
+              Satisfyer Pro Penguin
+            </div>
+            <div class="price flex">
+              <div class="main">19 990 ₸</div>
+              <div class="discount">21 990 ₸</div>
+            </div>
+          </a>
+          <div class="btn-wrapper">
+            <a href="#" class="btn">
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.79303 13.9231C6.79303 14.1361 6.7364 14.3443 6.63031 14.5214C6.52422 14.6985 6.37343 14.8365 6.19701 14.918C6.02058 14.9995 5.82645 15.0209 5.63916 14.9793C5.45187 14.9378 5.27984 14.8352 5.14481 14.6846C5.00978 14.534 4.91783 14.3421 4.88057 14.1332C4.84332 13.9243 4.86244 13.7077 4.93551 13.511C5.00859 13.3142 5.13234 13.146 5.29112 13.0276C5.4499 12.9093 5.63657 12.8462 5.82753 12.8462C6.08359 12.8462 6.32917 12.9596 6.51024 13.1616C6.69131 13.3635 6.79303 13.6375 6.79303 13.9231ZM12.1033 12.8462C11.9123 12.8462 11.7257 12.9093 11.5669 13.0276C11.4081 13.146 11.2844 13.3142 11.2113 13.511C11.1382 13.7077 11.1191 13.9243 11.1564 14.1332C11.1936 14.3421 11.2856 14.534 11.4206 14.6846C11.5556 14.8352 11.7277 14.9378 11.9149 14.9793C12.1022 15.0209 12.2964 14.9995 12.4728 14.918C12.6492 14.8365 12.8 14.6985 12.9061 14.5214C13.0122 14.3443 13.0688 14.1361 13.0688 13.9231C13.0688 13.6375 12.9671 13.3635 12.786 13.1616C12.605 12.9596 12.3594 12.8462 12.1033 12.8462ZM14.9787 4.38894L13.2571 10.629C13.1669 10.9598 12.9835 11.2494 12.7342 11.4548C12.4848 11.6602 12.1828 11.7704 11.8728 11.7692H6.07313C5.75872 11.7679 5.45315 11.653 5.20218 11.4418C4.95122 11.2305 4.76836 10.9343 4.68099 10.5974L2.49774 2.07692H1.48275C1.35472 2.07692 1.23193 2.02019 1.14139 1.91921C1.05086 1.81823 1 1.68127 1 1.53846C1 1.39565 1.05086 1.25869 1.14139 1.15771C1.23193 1.05673 1.35472 1 1.48275 1H2.49774C2.70738 1.00078 2.91116 1.07726 3.07857 1.21801C3.24598 1.35875 3.36803 1.55619 3.42643 1.78077L3.91583 3.69231H14.5171C14.5926 3.69228 14.6671 3.71202 14.7346 3.74995C14.802 3.78789 14.8606 3.84295 14.9055 3.91071C14.9504 3.97847 14.9804 4.05705 14.9931 4.14011C15.0058 4.22317 15.0009 4.3084 14.9787 4.38894Z" fill="white"/></svg>
+                    </span>Добавить в корзину
+            </a>
+          </div>
+        </div>
+        <div class="item good">
+          <div class="image">
+            <img src="./images/good2.png" alt="">
+          </div>
+          <div class="subtitle">
+            Вибратор
+          </div>
+          <div class="title">
+            Satisfyer Partner Plus
+          </div>
+          <div class="price flex">
+            <div class="main">20 590 ₸</div>
+          </div>
+          <div class="btn-wrapper">
+            <a href="#" class="btn btn-disabled">
+              Нет в наличии
+            </a>
+          </div>
+        </div>
+        <div class="item good">
+          <div class="image">
+            <img src="./images/good3.png" alt="">
+          </div>
+          <div class="subtitle">
+            Вибратор
+          </div>
+          <div class="title">
+            Satisfyer Mono Flex
+          </div>
+          <div class="price flex">
+            <div class="main">19 990 ₸</div>
+            <div class="discount">21 990 ₸</div>
+          </div>
+          <div class="btn-wrapper">
+            <a href="#" class="btn">
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.79303 13.9231C6.79303 14.1361 6.7364 14.3443 6.63031 14.5214C6.52422 14.6985 6.37343 14.8365 6.19701 14.918C6.02058 14.9995 5.82645 15.0209 5.63916 14.9793C5.45187 14.9378 5.27984 14.8352 5.14481 14.6846C5.00978 14.534 4.91783 14.3421 4.88057 14.1332C4.84332 13.9243 4.86244 13.7077 4.93551 13.511C5.00859 13.3142 5.13234 13.146 5.29112 13.0276C5.4499 12.9093 5.63657 12.8462 5.82753 12.8462C6.08359 12.8462 6.32917 12.9596 6.51024 13.1616C6.69131 13.3635 6.79303 13.6375 6.79303 13.9231ZM12.1033 12.8462C11.9123 12.8462 11.7257 12.9093 11.5669 13.0276C11.4081 13.146 11.2844 13.3142 11.2113 13.511C11.1382 13.7077 11.1191 13.9243 11.1564 14.1332C11.1936 14.3421 11.2856 14.534 11.4206 14.6846C11.5556 14.8352 11.7277 14.9378 11.9149 14.9793C12.1022 15.0209 12.2964 14.9995 12.4728 14.918C12.6492 14.8365 12.8 14.6985 12.9061 14.5214C13.0122 14.3443 13.0688 14.1361 13.0688 13.9231C13.0688 13.6375 12.9671 13.3635 12.786 13.1616C12.605 12.9596 12.3594 12.8462 12.1033 12.8462ZM14.9787 4.38894L13.2571 10.629C13.1669 10.9598 12.9835 11.2494 12.7342 11.4548C12.4848 11.6602 12.1828 11.7704 11.8728 11.7692H6.07313C5.75872 11.7679 5.45315 11.653 5.20218 11.4418C4.95122 11.2305 4.76836 10.9343 4.68099 10.5974L2.49774 2.07692H1.48275C1.35472 2.07692 1.23193 2.02019 1.14139 1.91921C1.05086 1.81823 1 1.68127 1 1.53846C1 1.39565 1.05086 1.25869 1.14139 1.15771C1.23193 1.05673 1.35472 1 1.48275 1H2.49774C2.70738 1.00078 2.91116 1.07726 3.07857 1.21801C3.24598 1.35875 3.36803 1.55619 3.42643 1.78077L3.91583 3.69231H14.5171C14.5926 3.69228 14.6671 3.71202 14.7346 3.74995C14.802 3.78789 14.8606 3.84295 14.9055 3.91071C14.9504 3.97847 14.9804 4.05705 14.9931 4.14011C15.0058 4.22317 15.0009 4.3084 14.9787 4.38894Z" fill="white"/></svg>
+                        </span>Добавить в корзину
+            </a>
+          </div>
+        </div>
+        <div class="item good">
+          <div class="image">
+            <img src="./images/good4.png" alt="">
+          </div>
+          <div class="subtitle">
+            Стимулятор клитора
+          </div>
+          <div class="title">
+            Satisfyer Pro Deluxe
+          </div>
+          <div class="price flex">
+            <div class="main">18 500 ₸</div>
+            <div class="discount">21 990 ₸</div>
+          </div>
+          <div class="btn-wrapper">
+            <a href="#" class="btn">
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.79303 13.9231C6.79303 14.1361 6.7364 14.3443 6.63031 14.5214C6.52422 14.6985 6.37343 14.8365 6.19701 14.918C6.02058 14.9995 5.82645 15.0209 5.63916 14.9793C5.45187 14.9378 5.27984 14.8352 5.14481 14.6846C5.00978 14.534 4.91783 14.3421 4.88057 14.1332C4.84332 13.9243 4.86244 13.7077 4.93551 13.511C5.00859 13.3142 5.13234 13.146 5.29112 13.0276C5.4499 12.9093 5.63657 12.8462 5.82753 12.8462C6.08359 12.8462 6.32917 12.9596 6.51024 13.1616C6.69131 13.3635 6.79303 13.6375 6.79303 13.9231ZM12.1033 12.8462C11.9123 12.8462 11.7257 12.9093 11.5669 13.0276C11.4081 13.146 11.2844 13.3142 11.2113 13.511C11.1382 13.7077 11.1191 13.9243 11.1564 14.1332C11.1936 14.3421 11.2856 14.534 11.4206 14.6846C11.5556 14.8352 11.7277 14.9378 11.9149 14.9793C12.1022 15.0209 12.2964 14.9995 12.4728 14.918C12.6492 14.8365 12.8 14.6985 12.9061 14.5214C13.0122 14.3443 13.0688 14.1361 13.0688 13.9231C13.0688 13.6375 12.9671 13.3635 12.786 13.1616C12.605 12.9596 12.3594 12.8462 12.1033 12.8462ZM14.9787 4.38894L13.2571 10.629C13.1669 10.9598 12.9835 11.2494 12.7342 11.4548C12.4848 11.6602 12.1828 11.7704 11.8728 11.7692H6.07313C5.75872 11.7679 5.45315 11.653 5.20218 11.4418C4.95122 11.2305 4.76836 10.9343 4.68099 10.5974L2.49774 2.07692H1.48275C1.35472 2.07692 1.23193 2.02019 1.14139 1.91921C1.05086 1.81823 1 1.68127 1 1.53846C1 1.39565 1.05086 1.25869 1.14139 1.15771C1.23193 1.05673 1.35472 1 1.48275 1H2.49774C2.70738 1.00078 2.91116 1.07726 3.07857 1.21801C3.24598 1.35875 3.36803 1.55619 3.42643 1.78077L3.91583 3.69231H14.5171C14.5926 3.69228 14.6671 3.71202 14.7346 3.74995C14.802 3.78789 14.8606 3.84295 14.9055 3.91071C14.9504 3.97847 14.9804 4.05705 14.9931 4.14011C15.0058 4.22317 15.0009 4.3084 14.9787 4.38894Z" fill="white"/></svg>
+                        </span>Добавить в корзину
+            </a>
+          </div>
+        </div>
+        <div class="item good">
+          <a href="#">
+            <div class="image">
+              <img src="./images/good1.png" alt="">
+            </div>
+            <div class="subtitle">
+              Стимулятор клитора
+            </div>
+            <div class="title">
+              Satisfyer Pro Penguin
+            </div>
+            <div class="price flex">
+              <div class="main">19 990 ₸</div>
+              <div class="discount">21 990 ₸</div>
+            </div>
+          </a>
+          <div class="btn-wrapper">
+            <a href="#" class="btn">
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.79303 13.9231C6.79303 14.1361 6.7364 14.3443 6.63031 14.5214C6.52422 14.6985 6.37343 14.8365 6.19701 14.918C6.02058 14.9995 5.82645 15.0209 5.63916 14.9793C5.45187 14.9378 5.27984 14.8352 5.14481 14.6846C5.00978 14.534 4.91783 14.3421 4.88057 14.1332C4.84332 13.9243 4.86244 13.7077 4.93551 13.511C5.00859 13.3142 5.13234 13.146 5.29112 13.0276C5.4499 12.9093 5.63657 12.8462 5.82753 12.8462C6.08359 12.8462 6.32917 12.9596 6.51024 13.1616C6.69131 13.3635 6.79303 13.6375 6.79303 13.9231ZM12.1033 12.8462C11.9123 12.8462 11.7257 12.9093 11.5669 13.0276C11.4081 13.146 11.2844 13.3142 11.2113 13.511C11.1382 13.7077 11.1191 13.9243 11.1564 14.1332C11.1936 14.3421 11.2856 14.534 11.4206 14.6846C11.5556 14.8352 11.7277 14.9378 11.9149 14.9793C12.1022 15.0209 12.2964 14.9995 12.4728 14.918C12.6492 14.8365 12.8 14.6985 12.9061 14.5214C13.0122 14.3443 13.0688 14.1361 13.0688 13.9231C13.0688 13.6375 12.9671 13.3635 12.786 13.1616C12.605 12.9596 12.3594 12.8462 12.1033 12.8462ZM14.9787 4.38894L13.2571 10.629C13.1669 10.9598 12.9835 11.2494 12.7342 11.4548C12.4848 11.6602 12.1828 11.7704 11.8728 11.7692H6.07313C5.75872 11.7679 5.45315 11.653 5.20218 11.4418C4.95122 11.2305 4.76836 10.9343 4.68099 10.5974L2.49774 2.07692H1.48275C1.35472 2.07692 1.23193 2.02019 1.14139 1.91921C1.05086 1.81823 1 1.68127 1 1.53846C1 1.39565 1.05086 1.25869 1.14139 1.15771C1.23193 1.05673 1.35472 1 1.48275 1H2.49774C2.70738 1.00078 2.91116 1.07726 3.07857 1.21801C3.24598 1.35875 3.36803 1.55619 3.42643 1.78077L3.91583 3.69231H14.5171C14.5926 3.69228 14.6671 3.71202 14.7346 3.74995C14.802 3.78789 14.8606 3.84295 14.9055 3.91071C14.9504 3.97847 14.9804 4.05705 14.9931 4.14011C15.0058 4.22317 15.0009 4.3084 14.9787 4.38894Z" fill="white"/></svg>
+                    </span>Добавить в корзину
+            </a>
+          </div>
+        </div>
+        <div class="item good">
+          <div class="image">
+            <img src="./images/good2.png" alt="">
+          </div>
+          <div class="subtitle">
+            Вибратор
+          </div>
+          <div class="title">
+            Satisfyer Partner Plus
+          </div>
+          <div class="price flex">
+            <div class="main">20 590 ₸</div>
+          </div>
+          <div class="btn-wrapper">
+            <a href="#" class="btn btn-disabled">
+              Нет в наличии
+            </a>
+          </div>
+        </div>
+        <div class="item good">
+          <div class="image">
+            <img src="./images/good3.png" alt="">
+          </div>
+          <div class="subtitle">
+            Вибратор
+          </div>
+          <div class="title">
+            Satisfyer Mono Flex
+          </div>
+          <div class="price flex">
+            <div class="main">19 990 ₸</div>
+            <div class="discount">21 990 ₸</div>
+          </div>
+          <div class="btn-wrapper">
+            <a href="#" class="btn">
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.79303 13.9231C6.79303 14.1361 6.7364 14.3443 6.63031 14.5214C6.52422 14.6985 6.37343 14.8365 6.19701 14.918C6.02058 14.9995 5.82645 15.0209 5.63916 14.9793C5.45187 14.9378 5.27984 14.8352 5.14481 14.6846C5.00978 14.534 4.91783 14.3421 4.88057 14.1332C4.84332 13.9243 4.86244 13.7077 4.93551 13.511C5.00859 13.3142 5.13234 13.146 5.29112 13.0276C5.4499 12.9093 5.63657 12.8462 5.82753 12.8462C6.08359 12.8462 6.32917 12.9596 6.51024 13.1616C6.69131 13.3635 6.79303 13.6375 6.79303 13.9231ZM12.1033 12.8462C11.9123 12.8462 11.7257 12.9093 11.5669 13.0276C11.4081 13.146 11.2844 13.3142 11.2113 13.511C11.1382 13.7077 11.1191 13.9243 11.1564 14.1332C11.1936 14.3421 11.2856 14.534 11.4206 14.6846C11.5556 14.8352 11.7277 14.9378 11.9149 14.9793C12.1022 15.0209 12.2964 14.9995 12.4728 14.918C12.6492 14.8365 12.8 14.6985 12.9061 14.5214C13.0122 14.3443 13.0688 14.1361 13.0688 13.9231C13.0688 13.6375 12.9671 13.3635 12.786 13.1616C12.605 12.9596 12.3594 12.8462 12.1033 12.8462ZM14.9787 4.38894L13.2571 10.629C13.1669 10.9598 12.9835 11.2494 12.7342 11.4548C12.4848 11.6602 12.1828 11.7704 11.8728 11.7692H6.07313C5.75872 11.7679 5.45315 11.653 5.20218 11.4418C4.95122 11.2305 4.76836 10.9343 4.68099 10.5974L2.49774 2.07692H1.48275C1.35472 2.07692 1.23193 2.02019 1.14139 1.91921C1.05086 1.81823 1 1.68127 1 1.53846C1 1.39565 1.05086 1.25869 1.14139 1.15771C1.23193 1.05673 1.35472 1 1.48275 1H2.49774C2.70738 1.00078 2.91116 1.07726 3.07857 1.21801C3.24598 1.35875 3.36803 1.55619 3.42643 1.78077L3.91583 3.69231H14.5171C14.5926 3.69228 14.6671 3.71202 14.7346 3.74995C14.802 3.78789 14.8606 3.84295 14.9055 3.91071C14.9504 3.97847 14.9804 4.05705 14.9931 4.14011C15.0058 4.22317 15.0009 4.3084 14.9787 4.38894Z" fill="white"/></svg>
+                        </span>Добавить в корзину
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="text">
+      <div class="item copyright">
+        &copy; 2024 | Dimarket
+      </div>
+      <div class="item">
+        <div class="item-text">
+          Тлендиева, 223, Алматы, Казахстан
+        </div>
+        <div class="item-text">
+          +7 706 430-93-10
+        </div>
+      </div>
+      <div class="item social">
+        <div class="item-title">Мы всегда на связи</div>
+        <div class="icons">
+          <a href="#"><img src="./images/instagram-logo.svg" alt=""></a>
+          <a href="#"><img src="./images/whatsapp-logo.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="./js/jquery.js"></script>
+<script src="./js/slick.min.js"></script>
+<script src="./js/lightbox.min.js"></script>
+<script src="./js/jquery.maskedinput.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
